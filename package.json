@@ -1,0 +1,70 @@
+{
+  "name": "CodeGenerator",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./electron/main.js",
+  "author": {
+    "name": "RedCode",
+    "email": "2464570487@qq.com"
+  },
+  "description": "A source code generator for software copyrights",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "CodeGenerator",
+        "icon": "dist/image/generate.png"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "linux",
+            "win32"
+          ],
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "element-plus": "^2.9.1",
+    "path": "^0.12.7",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.6.0",
+    "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/maker-rpm": "^7.6.0",
+    "@electron-forge/maker-squirrel": "^7.6.0",
+    "@electron-forge/maker-zip": "^7.6.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
+    "@electron-forge/plugin-fuses": "^7.6.0",
+    "@electron/fuses": "^1.8.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.9.3",
+    "@types/vue": "^1.0.31",
+    "@vitejs/plugin-legacy": "^6.0.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "electron": "^33.2.1",
+    "npm-run-all2": "^7.0.1",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.1",
+    "vite-plugin-vue-devtools": "^7.6.5",
+    "vue-tsc": "^2.1.10"
+  }
+}
