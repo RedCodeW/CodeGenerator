@@ -73,12 +73,12 @@ async function selectFolder() {
         files.push(element);
         let file_name = element.split('/').pop()
         let post = file_name.split('.').pop()
-        post = file_post.includes(post) ? post : 'file'
+        let post_img = file_post.includes(post) ? post : 'file'
         if (posts.length === 0 || posts.includes(post))
           names.push(
             {
               'name': file_name,
-              'post': 'image/' + post + '.png'
+              'post': 'image/' + post_img + '.png'
             }
           );
       });
